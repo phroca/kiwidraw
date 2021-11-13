@@ -1,0 +1,29 @@
+<div class="winner-container">
+    <div class="winner-header">
+        <img width="200" src="../assets/img/kiwidraw-trophy.png">
+        <img width="400" src="../assets/img/kiwidraw-winners.png">
+    </div>
+    <div class="winner-text">
+        <h2>List of Winners</h2>
+    </div>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table winners-table">
+                <thead>
+                    <tr>
+                        <th scope="col">N. DRAW</th>
+                        <th scope="col">ADDRESS</th>
+                        <th scope="col">COLLECTED</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of lotteries">
+                        <th style="min-width:265px;">{{item.id}}</th>
+                        <td style="min-width: 450px;">{{item.winner?.address}}</td>
+                        <td [ngClass]="item.isWinnerCollected ? 'collected':'uncollected'" [innerHTML]="item.isWinnerCollected ? 'collected':'uncollected'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

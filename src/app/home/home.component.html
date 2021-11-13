@@ -1,0 +1,66 @@
+<div class="content">
+
+    <div class="title">
+        <div class="countdown pb-4">
+            <p>NEXT DRAW</p>
+            <h2 *ngIf="currentLottery.id !=='' && !currentLottery.generateWinnerFlag">
+                <div class="roller">
+                    {{daysToDday}}<br>
+                    <span>Days</span></div>
+                <div class="roller">{{hoursToDday}}<br>
+                    <span>Hours</span></div>
+                <div class="roller">{{minutesToDday}}<br>
+                    <span>Minutes</span></div>
+                <div class="roller">{{secondsToDday}}<br>
+                    <span>Seconds</span></div>
+            </h2>
+            <h2 *ngIf="currentLottery.id ==='' || currentLottery.generateWinnerFlag === true">
+                COMING SOON
+            </h2>
+        </div>
+        <div class="col-xl-7 mx-auto" *ngIf="currentLottery.id !=='' && !currentLottery.generateWinnerFlag">
+            <div class="row">
+                <div class="col">
+                    <div class="card stats">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <img src="../../assets/img/lottery.svg" width="55" height="55">
+                                </div>
+                                <div class="col-8 text-center">
+                                    <h3>
+                                        <span>TICKETS SOLD</span> {{currentLottery.ticketsSold}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="currentLottery.id !=='' && !currentLottery.generateWinnerFlag">
+            <button type="button" (click)="buyTicket()" class="button-play-size slide">
+              <div>Play Lottery</div>
+              <i class="icon-arrow-right"></i>
+          </button>
+            <div (click)="generateWinner()">GENERER JOUEUR GAGNANT</div>
+        </div>
+    </div>
+    <div class="hero-picture">
+        <img width="550" src="../../assets/img/bg-hero.png" style="position:absolute; z-index:0">
+        <img src="../../assets/img/kiwi-btc.png" style="position:absolute; z-index:1; bottom:100px; right:150px">
+        <img src="../../assets/img/kiwi-card.png" style="position:absolute; z-index:1; bottom:100px; right:25vw">
+        <img src="../../assets/img/kiwi-dice.png" style="position:absolute; z-index:1; right:150px">
+        <img src="../../assets/img/kiwi-eth.png" style="position:absolute; z-index:1; top:25vh; right:30vw">
+        <img src="../../assets/img/kiwi-purpledot.png" style="position:absolute; z-index:1; bottom:20vh; right:40vw">
+        <img src="../../assets/img/kiwi-red-dot1.png" style="position:absolute; z-index:1; top:25vh; right:45vw">
+        <img src="../../assets/img/kiwi-red-dot2.png" style="position:absolute; z-index:1; top:25vh; right:3vw">
+        <img src="../../assets/img/kiwi-star.png" style="position:absolute; z-index:1; top:50vh; right:40vw">
+        <img src="../../assets/img/kiwi-star2.png" style="position:absolute; z-index:1; top:20vh; right:15vw">
+        <img src="../../assets/img/kiwi-yellow-dot1.png" style="position:absolute; z-index:1; bottom:5vh; right:5vw">
+        <img src="../../assets/img/kiwidraw-greencard.png" style="position:absolute; z-index:1; bottom:30vh; right:35vw">
+        <img src="../../assets/img/kiwidraw-purplecard.png" style="position:absolute; z-index:1; top:20vh; right:25vw">
+        <img src="../../assets/img/kiwidraw-redcard.png" style="position:absolute; z-index:1; bottom:15vh; right:20vw">
+        <img width="500" src="../../assets/img/kiwi-logo-bg.png" style="z-index:2">
+    </div>
+</div>

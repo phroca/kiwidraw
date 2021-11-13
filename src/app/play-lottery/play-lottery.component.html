@@ -1,0 +1,27 @@
+<div class="lottery-container mt-5">
+    <div class="presentation">
+        <div class="text-information">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_reqivhma.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        </div>
+        <div *ngIf="tooLateToBuyTicket === false" class="image">
+            <p>YOUR TICKET FOR THE LOTTERY N. {{currentLottery.id}}:</p>
+            <h2>
+                <div class="roller">Ticket n. {{ticketNumber}}</div>
+
+            </h2>
+        </div>
+        <div *ngIf="tooLateToBuyTicket === true" class="image">
+            <p>TOO LATE TO THIS LOTTERY :(</p>
+
+        </div>
+    </div>
+    <div class="text-information-compl" *ngIf="currentLottery.generateWinnerFlag === false">
+        <span class="text--medium"><strong>Come back to see the winner when the draw is over !</strong></span>
+    </div>
+    <div class="button-participate" *ngIf="currentLottery.generateWinnerFlag === true && tooLateToBuyTicket === false">
+        <button type="button " class="button-participate-size slide" (click)="checkWinner()">
+          <div>Check the winner </div>
+          <i class="icon-arrow-right"></i>
+        </button>
+    </div>
+</div>

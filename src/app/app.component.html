@@ -1,0 +1,19 @@
+<nav>
+    <div class="logo" routerLink="/home">
+        <img src="../assets/img/kiwidraw-mini-logo.png" width="30" alt="">
+        <h1>Kiwidraw</h1>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/play-lottery">Lottery</a>
+        </li>
+        <li>
+            <a routerLink="/winner-list">List of Winners</a>
+        </li>
+        <li class="button" [ngClass]="{'ellipsis-addr': account.length !== 0}">
+            <a (click)="connectToWallet()" *ngIf="account.length == 0">Connect</a>
+            <a class="ellipsis-addr">{{account}}</a>
+        </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

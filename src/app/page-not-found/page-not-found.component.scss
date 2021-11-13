@@ -1,0 +1,19 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .header {
+        h2 {
+            font-size: 150px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+    .text-not-found {
+        font-size: 50px;
+    }
+    .image-not-found {
+        padding-top: 50px;
+    }
+}

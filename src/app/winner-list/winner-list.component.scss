@@ -1,0 +1,74 @@
+$winner-padding-top: 50px;
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-width: 0px;
+    border-style: solid;
+    border-image: initial;
+    border-color: inherit;
+}
+
+.winner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .winner-header {
+        padding-top: $winner-padding-top;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .winner-text {
+        h2 {
+            font-size: 80px;
+            font-weight: 500;
+        }
+    }
+    .table-responsive {
+        overflow-x: auto;
+        table {
+            tbody {
+                tr {
+                    border-bottom: 8px solid #d7f0b4;
+                    background: #B6E595;
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                    th {
+                        background-color: #A1DB78;
+                    }
+                    td {
+                        &.collected {
+                            background-color: #A1DB78;
+                            color: #FFFFFF
+                        }
+                        &.uncollected {
+                            background-color: #A1DB78;
+                            color: #F1645D;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .winner-list {
+        width: 70%;
+        ul {
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                &.content {
+                    background-color: #A1DB78;
+                    margin: 5px auto;
+                }
+            }
+        }
+    }
+}
